@@ -10,9 +10,9 @@
     "incremental": true,
     "esModuleInterop": true,
     "jsx": "preserve",
-    // "module": "esnext",
-    // "resolveJsonModule": true,
-    "isolatedModules": true
+    "module": "CommonJS",
+    "isolatedModules": true,
+    "resolveJsonModule": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
