@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, useBreakpointValue } from '@chakra-ui/react';
 
 import { Logo } from './atoms/Logo';
 import { Notification } from './atoms/Notification';
@@ -6,6 +6,10 @@ import { Profile } from './atoms/Profile';
 import { Search } from './atoms/Searchbox';
 
 export function Header() {
+  const isWildVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
   return (
     <Flex
       as="header"
@@ -18,11 +22,11 @@ export function Header() {
       align="center"
     >
       <Logo />
-      <Search />
+      {isWildVersion && <Search />}
 
       <Flex align="center" ml="auto">
         <Notification />
-        <Profile />
+        <Profile showProfileData={isWildVersion} />
       </Flex>
     </Flex>
   );
